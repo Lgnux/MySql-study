@@ -1,0 +1,35 @@
+DQL
+基本查询
+查询多个字段
+select 字段1,字段2,字段3...from 表名;
+select*form 表名
+设置别名
+select 字段1[as 别名1],字段2[as 别名2]...from 表名;
+去除重复记录
+select dstnct 字段列表 from 表名;
+
+条件查询
+select 字段列表 from 表名 where 条件列表
+
+聚合函数
+select 聚合函数(字段列表) from 表名
+null值不参与聚合函数的运算
+
+分组查询
+select 字段列表 from 表名[where 条件] group by 分组字段名 [having 分组后过滤条件]
+分组前过滤用where 分组后过滤用having
+执行顺序：where>聚合函数>having
+
+排序查询
+select 字段列表 from 表名 order by 字段1 排序方式1，字段2 排序方式2
+排序方式：asc 升序(默认值) desc 降序
+
+分页查询
+select 字段列表 from limit 起始索引，查询记录数
+注意：起始索引从0开始，起始索引=(查询页码 - 1) * 每页每条记录数
+
+编写顺序
+select from where groupby having orderby limit
+执行顺序
+from where groupby和having select orderby limit
+
